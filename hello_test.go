@@ -4,7 +4,7 @@ import "testing"
 
 func TestHello(t *testing.T) {
 	name := "alireza"
-	exceptedOutput := "Hello, alireza"
+	exceptedOutput := englishHelloPrefix + name
 
 	output := Hello(name)
 	if output != exceptedOutput {
