@@ -5,10 +5,10 @@ import "testing"
 func TestRepeat(t *testing.T) {
 	t.Run("Repeat a character 5 times", func(t *testing.T) {
 		repeated := Repeat("a")
-		exceptedOutput := "aaaaa"
+		expectedOutput := "aaaaa"
 
-		if repeated != exceptedOutput {
-			t.Errorf("expected %q but got %q", exceptedOutput, repeated)
+		if repeated != expectedOutput {
+			t.Errorf("expected %q but got %q", expectedOutput, repeated)
 		}
 	})
 }
