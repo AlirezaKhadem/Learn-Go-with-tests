@@ -3,10 +3,13 @@ package struct_
 import "testing"
 
 func TestPerimeter(t *testing.T) {
-	width, height := 10.0, 10.0
+	rectangle := Rectangle{
+		width:  10.0,
+		height: 10.0,
+	}
 	exceptedOutput := 40.0
 
-	output := Perimeter(width, height)
+	output := Perimeter(rectangle)
 	if output != exceptedOutput {
 		t.Errorf(
 			"got %.2f want %.2f",
@@ -17,10 +20,13 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-	width, height := 12.0, 6.0
+	rectangle := Rectangle{
+		width:  6.0,
+		height: 12.0,
+	}
 	exceptedOutput := 72.0
 
-	output := Area(width, height)
+	output := Area(rectangle)
 	if output != exceptedOutput {
 		t.Errorf(
 			"got %.2f want %.2f",
