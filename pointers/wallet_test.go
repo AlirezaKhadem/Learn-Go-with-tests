@@ -8,7 +8,7 @@ func TestWallet(t *testing.T) {
 	wallet.Deposit(10)
 
 	output := wallet.Balance()
-	expectedOutput := 10
+	expectedOutput := Bitcoin(10)
 
 	if output != expectedOutput {
 		t.Errorf(
