@@ -1,10 +1,33 @@
 package main
 
-const englishHelloPrefix = "Hello, "
+const englishLanguage = "en"
+const spanishLanguage = "es"
 
-func Hello(name string) string {
+const englishHelloPrefix = "Hello, "
+const spanishHelloPrefix = "Holla, "
+
+var languagePrefixMapping = map[string]string{
+	englishLanguage: englishHelloPrefix,
+	spanishLanguage: spanishHelloPrefix,
+}
+
+func Hello(
+	name string,
+	language string,
+) string {
+	helloPrefix := getHelloPrefix(language)
 	if len(name) == 0 {
-		return englishHelloPrefix + "World"
+		name = "World"
 	}
-	return string(englishHelloPrefix + name)
+
+	return helloPrefix + name
+}
+
+func getHelloPrefix(language string) (helloPrefix string) {
+	if _, ok := languagePrefixMapping[language]; !ok {
+		helloPrefix = englishHelloPrefix
+	} else {
+		helloPrefix = languagePrefixMapping[language]
+	}
+	return helloPrefix
 }
