@@ -1,14 +1,21 @@
 package main
 
-const englishLanguage = "en"
-const spanishLanguage = "es"
+const (
+	english = "en"
+	spanish = "es"
+	french  = "fr"
+)
 
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Holla, "
+const (
+	englishHelloPrefix = "Hello, "
+	spanishHelloPrefix = "Holla, "
+	frenchHelloPrefix  = "Bonjour, "
+)
 
 var languagePrefixMapping = map[string]string{
-	englishLanguage: englishHelloPrefix,
-	spanishLanguage: spanishHelloPrefix,
+	english: englishHelloPrefix,
+	spanish: spanishHelloPrefix,
+	french:  frenchHelloPrefix,
 }
 
 func Hello(
