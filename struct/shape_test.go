@@ -52,21 +52,16 @@ func TestArea(t *testing.T) {
 		}
 	}
 
-	t.Run("rectangle", func(t *testing.T) {
-		rectangle := Rectangle{
-			width:  6.0,
-			height: 12.0,
-		}
-		expectedOutput := 72.0
+	areaTests := []struct {
+		name  string
+		shape Shape
+		area  float64
+	}{
+		{name: "rectangle", shape: Rectangle{6.0, 12.0}, area: 72.0},
+		{name: "circle", shape: Circle{10}, area: 314.1592653589793},
+	}
 
-		checkArea(t, rectangle, expectedOutput)
-	})
-	t.Run("circle", func(t *testing.T) {
-		circle := Circle{
-			radius: 10,
-		}
-		expectedOutput := 314.1592653589793
-
-		checkArea(t, circle, expectedOutput)
-	})
+	for _, testCase := range areaTests {
+		checkArea(t, testCase.shape, testCase.area)
+	}
 }
