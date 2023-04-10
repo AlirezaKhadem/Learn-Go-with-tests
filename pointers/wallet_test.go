@@ -16,6 +16,7 @@ func TestWallet(t *testing.T) {
 	}
 
 	assertError := func(t testing.TB, err error) {
+		t.Helper()
 		if err == nil {
 			t.Error("wanted an error but didn't get one")
 		}
